@@ -18,7 +18,7 @@ def predict():
     pwidth=float(request.form['petal_width'])
 
     final_features = np.array([[slength,swidth,plength,pwidth]])
-    prediction=model.predict(final_features)
+    prediction=model.predict(final_features)[0]
     return render_template('index.html', sleng=slength, pred= prediction)
     
     
